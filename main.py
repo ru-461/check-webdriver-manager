@@ -13,21 +13,28 @@ console = Console()
 def main():
     console.log("Launch Google Chrome.")
 
-    # Init
-    driver = init_webdriver()
+    try:
+        # Default
+        driver = None
 
-    # Access to Google.
-    driver.get("https://www.google.com")
+        # Initialize
+        driver = init_webdriver()
 
-    # Wait
-    for _ in track(range(5), description="Waiting..."):
-        sleep(1)
-        pass
+        # Access to Google.
+        driver.get("https://www.google.com")
 
-    # Quit
-    driver.quit()
+        # Wait
+        for _ in track(range(5), description="Waiting..."):
+            sleep(1)
+            pass
 
-    console.log("Quit Google Chrome.")
+    except Exception as e:
+        console.log(f"An error occurred: {str(e)}")
+    finally:
+        if driver:
+            # Quit
+            driver.quit()
+            console.log("Quit Google Chrome.")
 
 
 def init_webdriver() -> webdriver.Chrome:
