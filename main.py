@@ -39,20 +39,20 @@ def main():
 
 def init_webdriver() -> webdriver.Chrome:
     """Initialize ChromeWebDriver
+
     Returns:
         webdriver.Chrome: ChromeWebDriver
     """
     options = Options()
     service = Service(ChromeDriverManager().install())
 
+    options.add_experimental_option("excludeSwitches", ["enable-logging"])
+
     # Create
     driver = webdriver.Chrome(options=options, service=service)
 
     # Maximize
     driver.maximize_window()
-
-    # Setting wait
-    driver.implicitly_wait(5)
 
     return driver
 
