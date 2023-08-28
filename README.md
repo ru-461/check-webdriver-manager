@@ -2,11 +2,11 @@
 
 Confirmation of [webdriver-manager](https://pypi.org/project/webdriver-manager/) operation.
 
-# Requirements
+## Requirements
 
 - [Python >=3.7](https://www.python.org)
 
-# Setup
+## Setup
 
 ```shell
 pip install -r requirements.txt
