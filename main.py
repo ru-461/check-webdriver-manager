@@ -11,12 +11,12 @@ console = Console()
 
 
 def main():
+    # Default
+    driver = None
+
     console.log("Launch Google Chrome.")
 
     try:
-        # Default
-        driver = None
-
         # Initialize
         driver = init_webdriver()
 
