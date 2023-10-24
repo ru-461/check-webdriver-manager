@@ -48,10 +48,10 @@ def init_webdriver() -> webdriver.Chrome:
 
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-    # Create
+    # Create webdriver
     driver = webdriver.Chrome(options=options, service=service)
 
-    # Maximize
+    # Maximize window on start.
     driver.maximize_window()
 
     return driver
